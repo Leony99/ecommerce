@@ -17,9 +17,9 @@
                 <a href="index.html">Início</a>
                 <a href="catalog.html">Catálogo</a>
                 <a href="conta.html">Minha conta</a>
-                <form class="search-box search-box-closed">
-                    <input class="search-input search-input-closed" placeholder="Sua procura">
-                    <button class="search-button search-button-closed">
+                <form class="search-box search-box-closed" action="catalog.html" method="get" autocomplete="off">
+                    <input class="search-input search-input-closed" placeholder="Sua procura" name="search">
+                    <button class="search-button search-button-closed" type="submit">
                         <img src="icons/search.svg" style="aspect-ratio: 1/1; width: 24px;">
                     </button>
                 </form>
@@ -35,7 +35,7 @@
             <div class="line"></div>
             <div class="product-box">
                 <div class="product-image">
-                    <img src="" alt="">
+                    <img src="" >
                 </div>
                 <div class="product-info">
                     <p class="product-name">Produto 1</p>
@@ -43,14 +43,14 @@
                         <div class="value">
                             <div class="value-price">
                                 <img src="icons/money-bill-wave.svg" style="aspect-ratio: 1/1; width: 24px;" class="filter-white">
-                                R$ 00,00
+                                R$ <span class="value-price-discount">00,00</span>
                             </div>
                             <p class="value-text">No <b>pix</b> ou <b>boleto</b>.</p>
                         </div>
                         <div class="value">
                             <div class="value-price">
                                 <img src="icons/credit-card.svg" style="aspect-ratio: 1/1; width: 24px;" class="filter-white">
-                                R$ 00,00
+                                R$ <span class="value-price-normal">00,00</span>
                             </div>
                             <p class="value-text">No cartão em até <b>10x</b>.</p>
                         </div>

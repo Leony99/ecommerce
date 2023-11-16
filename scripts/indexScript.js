@@ -40,3 +40,16 @@ arrows.forEach(function(elem) {
         }
     });
 });
+
+//Redirect to product.html
+function redirectToProductPage(clickedDiv) {
+    var image = clickedDiv.getAttribute("data-image");
+    var name = clickedDiv.getAttribute("data-name");
+    var price = clickedDiv.getAttribute("data-price");
+
+    var url = 'product.html?image=' + encodeURIComponent(image) +
+                '&name=' + encodeURIComponent(name) +
+                '&price=' + encodeURIComponent(price);
+
+    window.location.href = url;
+}
