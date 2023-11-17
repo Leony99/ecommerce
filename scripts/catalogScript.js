@@ -1,3 +1,6 @@
+const checkboxes = document.querySelectorAll("input[type=checkbox]");
+const products = document.querySelectorAll(".product-card");
+
 //Recover search box data
 function getParameterFromUrl(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
@@ -7,12 +10,24 @@ function getParameterFromUrl(name) {
 }
 var search = getParameterFromUrl('search');
 
-alert('Data received: ' + search);
+//Catalog filter by search
+if (search !== '') {
+    products.forEach(function(product) {
+        var productName = product.getAttribute("data-name");
 
-//Catalog filter
-const checkboxes = document.querySelectorAll("input[type=checkbox]");
-const products = document.querySelectorAll(".product-card");
+        if (productName.toLowerCase().includes(search.toLowerCase())) {
+            product.style.display = 'flex';
+        } else {
+            product.style.display = 'none';
+        }
+    });
+} else {
+    products.forEach(function(product) {
+        product.style.display = 'flex';
+    });
+}
 
+//Catalog filter by check
 checkboxes.forEach(checkbox => {
     checkbox.addEventListener("change", function() {
         const checkedCheckboxes = document.querySelectorAll("input[type=checkbox]:checked");

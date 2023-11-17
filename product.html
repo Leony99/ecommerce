@@ -10,6 +10,16 @@
         <script defer src="./scripts/productScript.js"></script>
     </head>
     <body>
+        <!--Cart-->
+        <div class="cart">
+            <p>Meu carrinho</p>
+            <div class="line"></div>
+            <div class="cart-products">
+                
+            </div>
+            <button class="buy-button">Finalizar pedido</button>
+        </div>
+
         <!--Header-->
         <section class="header">
             <div class="logo">LOGO</div>
@@ -84,7 +94,7 @@
                             <button class="counter-button counter-right" onclick="increment()">+</button>
                         </div>
                     </div>
-                    <button class="buy-button">Adicionar ao carrinho</button>
+                    <button class="buy-button" onclick="adicionarAoCarrinho()">Adicionar ao carrinho</button>
                     <div class="freight-calc">
                         <div class="freight-text">
                             <img src="icons/truck.svg" style="aspect-ratio: 1/1; width: 30px;" class="filter-white">
